@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тойға шақыру — Тамерлан & Алина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:        #f0ece8;
+      --bg-alt:    #e8e3de;
+      --text:      #1a1714;
+      --accent:    #7a6e65;
+      --line:      rgba(58,48,42,0.22);
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --script:    'Great Vibes', cursive;
+      --display:   'Playfair Display', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      overflow-x: hidden;
+    }
+
+    /* ─── Music button ─── */
+    #music-btn {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: background .25s;
+    }
+    #music-btn:hover { background: var(--bg-alt); }
+    #music-btn svg { width: 20px; height: 20px; }
+
+    /* ─── Sections ─── */
+    .wrap {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 72px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* ─── Fade-in on scroll ─── */
+    .fade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Star divider ─── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 28px auto;
+      max-width: 280px;
+    }
+    .divider .hr { flex: 1; height: 1px; background: var(--line); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Corner botanical decorations */
+    .corner-svg {
+      position: absolute;
+      pointer-events: none;
+      opacity: .13;
+    }
+
+    .label-sm {
+      font-size: 11.5px;
+      letter-spacing: 5px;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    /* ─── Initials block ─── */
+    .initials-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 24px 0 18px;
+      width: 100%;
+    }
+
+    .initial-wrap {
+      position: relative;
+      width: 140px;
+      height: 175px;
+      flex-shrink: 0;
+    }
+
+    .initial-letter {
+      position: absolute;
+      inset: 0;
+      font-family: var(--display);
+      font-size: 170px;
+      line-height: 1;
+      color: var(--text);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0;
+    }
+
+    .initial-floral {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .line-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 10px;
+      gap: 0;
+    }
+    .line-divider .vline { width: 1px; height: 52px; background: var(--line); }
+
+    .couple-script {
+      font-family: var(--script);
+      font-size: 52px;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero-date {
+      font-size: 16px;
+      letter-spacing: 5px;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    /* ─── Countdown ─── */
+    .countdown {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+    .cd-item { text-align: center; }
+    .cd-num {
+      display: block;
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 5px;
+      min-width: 56px;
+    }
+    .cd-lbl {
+      font-size: 9.5px;
+      letter-spacing: 3px;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .scroll-hint {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: var(--accent);
+      text-transform: uppercase;
+      animation: breathe 2.4s infinite;
+    }
+    @keyframes breathe { 0%,100%{opacity:.5} 50%{opacity:1} }
+
+    /* ─── GREETING ─── */
+    .greeting-text {
+      font-family: var(--script);
+      font-size: 36px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    /* ─── INVITATION ─── */
+    .sizdерdi {
+      font-size: 12px;
+      letter-spacing: 5px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .name-big {
+      font-family: var(--script);
+      font-size: 60px;
+      line-height: 1.05;
+      color: var(--text);
+    }
+    .name-big.right { text-align: right; }
+
+    .pen-label {
+      font-size: 11px;
+      letter-spacing: 7px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .invite-body {
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      line-height: 1.9;
+      color: var(--text);
+      margin-top: 28px;
+    }
+
+    /* ─── DETAILS ─── */
+    .section-script { font-family: var(--script); font-size: 44px; color: var(--text); }
+    .parents-script { font-family: var(--script); font-size: 38px; color: var(--text); margin-top: 4px; }
+
+    .event-info {
+      font-size: 15px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      line-height: 2;
+      color: var(--text);
+    }
+
+    /* ─── Calendar ─── */
+    .calendar {
+      margin: 32px auto 0;
+      max-width: 310px;
+    }
+    .cal-month {
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      row-gap: 2px;
+    }
+    .cal-hd {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      text-align: center;
+      padding: 4px 0;
+    }
+    .cal-d {
+      font-size: 14px;
+      text-align: center;
+      padding: 7px 2px;
+      color: var(--text);
+      position: relative;
+    }
+    .cal-d.today {
+      font-weight: 700;
+    }
+    .cal-d.today::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 1.2px solid var(--text);
+    }
+    /* Heart overlay on wedding day */
+    .cal-d.today::after {
+      content: '♡';
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: var(--text);
+      opacity: .5;
+      line-height: 1;
+    }
+    .cal-empty { padding: 7px 2px; }
+
+    /* ─── VENUE ─── */
+    .venue-name {
+      font-size: 17px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text);
+      margin: 12px 0 8px;
+    }
+    .venue-note {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      padding: 14px 20px;
+      display: inline-block;
+    }
+
+    /* ─── RSVP ─── */
+    .rsvp-title {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .rsvp-btn {
+      display: inline-block;
+      background: #6b6058;
+      color: #f0ece8;
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 17px 46px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .25s;
+    }
+    .rsvp-btn:hover { background: #4e4540; }
+    .rsvp-sub {
+      margin-top: 12px;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* ─── CLOSING ─── */
+    .closing-script {
+      font-family: var(--script);
+      font-size: 40px;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    /* ─── Botanical side decoration (mid-page) ─── */
+    .side-deco {
+      position: absolute;
+      pointer-events: none;
+      opacity: .08;
+    }
+
+    @media (max-width: 370px) {
+      .initial-wrap { width: 115px; height: 145px; }
+      .initial-letter { font-size: 140px; }
+      .couple-script { font-size: 42px; }
+      .greeting-text { font-size: 30px; }
+      .name-big { font-size: 48px; }
+      .section-script { font-size: 36px; }
+      .parents-script { font-size: 32px; }
+      .closing-script { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     MUSIC BUTTON
+══════════════════════════════════════════ -->
+<button id="music-btn" onclick="toggleMusic()" title="Музыка">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13"/>
+    <circle cx="6" cy="18" r="3"/>
+    <circle cx="18" cy="16" r="3"/>
+  </svg>
+</button>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+
+  <!-- Botanical corners -->
+  <svg class="corner-svg" style="top:0;right:0;width:190px" viewBox="0 0 190 220" fill="none">
+    <path d="M190 0 C165 30,130 45,100 38 C78 33,58 20,38 28 C18 36,10 58,22 78 C34 98,55 105,48 128 C41 151,14 162,0 180" stroke="#3a3530" stroke-width="1"/>
+    <path d="M190 18 C170 42,145 53,122 46 C106 41,92 28,72 33 C52 38,42 58,52 76" stroke="#3a3530" stroke-width=".7"/>
+    <ellipse cx="138" cy="55" rx="9" ry="14" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(-30 138 55)"/>
+    <ellipse cx="108" cy="42" rx="7" ry="11" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(-15 108 42)"/>
+    <ellipse cx="85"  cy="32" rx="5" ry="9"  fill="none" stroke="#3a3530" stroke-width=".6" transform="rotate(10 85 32)"/>
+    <circle  cx="155" cy="34" r="4.5" fill="none" stroke="#3a3530" stroke-width=".6"/>
+    <circle  cx="122" cy="27" r="3"   fill="none" stroke="#3a3530" stroke-width=".6"/>
+    <path d="M150 28 C146 20,152 14,158 20" stroke="#3a3530" stroke-width=".6"/>
+    <path d="M128 22 C132 14,140 16,136 24" stroke="#3a3530" stroke-width=".6"/>
+  </svg>
+
+  <svg class="corner-svg" style="bottom:0;left:0;width:190px;transform:rotate(180deg)" viewBox="0 0 190 220" fill="none">
+    <path d="M190 0 C165 30,130 45,100 38 C78 33,58 20,38 28 C18 36,10 58,22 78 C34 98,55 105,48 128 C41 151,14 162,0 180" stroke="#3a3530" stroke-width="1"/>
+    <path d="M190 18 C170 42,145 53,122 46 C106 41,92 28,72 33 C52 38,42 58,52 76" stroke="#3a3530" stroke-width=".7"/>
+    <ellipse cx="138" cy="55" rx="9" ry="14" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(-30 138 55)"/>
+    <ellipse cx="108" cy="42" rx="7" ry="11" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(-15 108 42)"/>
+  </svg>
+
+  <div class="wrap" style="z-index:1">
+    <p class="label-sm fade">Тойға Шақыру</p>
+
+    <!-- T ✦ A -->
+    <div class="initials-row fade" style="transition-delay:.1s">
+
+      <!-- Letter T with florals -->
+      <div class="initial-wrap">
+        <div class="initial-letter">T</div>
+        <svg class="initial-floral" viewBox="0 0 140 175" fill="none">
+          <!-- left-side botanical -->
+          <circle cx="18" cy="42" r="7.5" stroke="#1a1714" stroke-width=".7"/>
+          <path d="M12 36 C8 28,14 20,20 26" stroke="#1a1714" stroke-width=".6"/>
+          <path d="M24 36 C30 26,38 30,32 38" stroke="#1a1714" stroke-width=".6"/>
+          <path d="M18 50 C16 62,12 72,18 82" stroke="#1a1714" stroke-width=".65"/>
+          <ellipse cx="10" cy="68" rx="5" ry="9" fill="none" stroke="#1a1714" stroke-width=".6" transform="rotate(-20 10 68)"/>
+          <ellipse cx="26" cy="72" rx="4" ry="8" fill="none" stroke="#1a1714" stroke-width=".6" transform="rotate(20 26 72)"/>
+          <circle cx="12" cy="88" r="2.5" fill="none" stroke="#1a1714" stroke-width=".55"/>
+          <!-- tiny leaf cluster -->
+          <path d="M6 56 C2 48,8 42,12 50" stroke="#1a1714" stroke-width=".55"/>
+          <path d="M28 50 C34 44,38 50,32 56" stroke="#1a1714" stroke-width=".55"/>
+        </svg>
+      </div>
+
+      <!-- vertical divider with star -->
+      <div class="line-divider">
+        <div class="vline"></div>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="margin:5px 0">
+          <line x1="9" y1="0" x2="9" y2="18" stroke="#1a1714" stroke-width=".8"/>
+          <line x1="0" y1="9" x2="18" y2="9" stroke="#1a1714" stroke-width=".8"/>
+          <line x1="2.6" y1="2.6" x2="15.4" y2="15.4" stroke="#1a1714" stroke-width=".5"/>
+          <line x1="2.6" y1="15.4" x2="15.4" y2="2.6" stroke="#1a1714" stroke-width=".5"/>
+        </svg>
+        <div class="vline"></div>
+      </div>
+
+      <!-- Letter A with florals -->
+      <div class="initial-wrap">
+        <div class="initial-letter">А</div>
+        <svg class="initial-floral" viewBox="0 0 140 175" fill="none">
+          <!-- right-side botanical (mirrored) -->
+          <circle cx="122" cy="42" r="7.5" stroke="#1a1714" stroke-width=".7"/>
+          <path d="M128 36 C132 28,126 20,120 26" stroke="#1a1714" stroke-width=".6"/>
+          <path d="M116 36 C110 26,102 30,108 38" stroke="#1a1714" stroke-width=".6"/>
+          <path d="M122 50 C124 62,128 72,122 82" stroke="#1a1714" stroke-width=".65"/>
+          <ellipse cx="130" cy="68" rx="5" ry="9" fill="none" stroke="#1a1714" stroke-width=".6" transform="rotate(20 130 68)"/>
+          <ellipse cx="114" cy="72" rx="4" ry="8" fill="none" stroke="#1a1714" stroke-width=".6" transform="rotate(-20 114 72)"/>
+          <circle cx="128" cy="88" r="2.5" fill="none" stroke="#1a1714" stroke-width=".55"/>
+          <path d="M134 56 C138 48,132 42,128 50" stroke="#1a1714" stroke-width=".55"/>
+          <path d="M112 50 C106 44,102 50,108 56" stroke="#1a1714" stroke-width=".55"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="couple-script fade" style="transition-delay:.2s">Tamerlan & Alina</p>
+    <p class="hero-date fade" style="transition-delay:.3s">2 Тамыз 2026</p>
+
+    <!-- Countdown -->
+    <div class="countdown fade" style="transition-delay:.4s" id="countdown">
+      <div class="cd-item"><span class="cd-num" id="cd-d">—</span><span class="cd-lbl">Күн</span></div>
+      <div class="cd-item"><span class="cd-num" id="cd-h">—</span><span class="cd-lbl">Сағат</span></div>
+      <div class="cd-item"><span class="cd-num" id="cd-m">—</span><span class="cd-lbl">Минут</span></div>
+      <div class="cd-item"><span class="cd-num" id="cd-s">—</span><span class="cd-lbl">Секунд</span></div>
+    </div>
+
+    <p class="scroll-hint fade" style="transition-delay:.5s">↓ &ensp; Жоғары Көтеріңіз &ensp; ↓</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     GREETING
+══════════════════════════════════════════ -->
+<section id="greeting">
+  <div class="wrap">
+    <div class="divider fade">
+      <div class="hr"></div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
+        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
+      </svg>
+      <div class="hr"></div>
+    </div>
+
+    <p class="greeting-text fade">
+      Құрметті<br>
+      ағайын-туыс, бағырлар,<br>
+      куда-жекжат,<br>
+      нағашы-жиен, бөлелер,<br>
+      құрбы-құрдас,<br>
+      дос-жарандар,<br>
+      әріптестер, көршілер!
+    </p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     INVITATION
+══════════════════════════════════════════ -->
+<section id="invitation" style="position:relative;overflow:hidden">
+  <!-- Side botanical -->
+  <svg class="side-deco" style="left:-28px;top:50%;transform:translateY(-50%);width:100px" viewBox="0 0 80 280" fill="none">
+    <path d="M40 0 C20 50,60 100,40 150 C20 200,60 240,40 280" stroke="#1a1714" stroke-width="1"/>
+    <path d="M40 55 C10 65,2 85,22 95" stroke="#1a1714" stroke-width=".8"/>
+    <path d="M40 110 C70 120,78 140,58 150" stroke="#1a1714" stroke-width=".8"/>
+    <path d="M40 168 C10 178,2 198,22 208" stroke="#1a1714" stroke-width=".8"/>
+    <ellipse cx="14" cy="90" rx="7" ry="12" fill="none" stroke="#1a1714" stroke-width=".7" transform="rotate(-15 14 90)"/>
+    <ellipse cx="64" cy="145" rx="7" ry="12" fill="none" stroke="#1a1714" stroke-width=".7" transform="rotate(15 64 145)"/>
+  </svg>
+
+  <div class="wrap">
+    <p class="sizdерdi fade">Сіздерді</p>
+    <p class="name-big fade" style="transition-delay:.1s">Тамерлан</p>
+    <p class="pen-label fade" style="transition-delay:.15s">ПЕН</p>
+    <p class="name-big right fade" style="transition-delay:.2s">Алина</p>
+
+    <div class="divider fade" style="transition-delay:.25s;margin:24px auto">
+      <div class="hr"></div>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <line x1="7" y1="0" x2="7" y2="14" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="0" y1="7" x2="14" y2="7" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="2" y1="2" x2="12" y2="12" stroke="#3a3530" stroke-width=".5"/>
+        <line x1="2" y1="12" x2="12" y2="2" stroke="#3a3530" stroke-width=".5"/>
+      </svg>
+      <div class="hr"></div>
+    </div>
+
+    <p class="invite-body fade" style="transition-delay:.3s">
+      Балаларымыздың үйлену<br>
+      тойына арналған салтанатты<br>
+      ақ дастарханымыздың<br>
+      қадірлі қонағы болуға<br>
+      шақырамыз!
+    </p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     DETAILS — Parents + Date + Calendar
+══════════════════════════════════════════ -->
+<section id="details">
+  <div class="wrap">
+    <div class="divider fade">
+      <div class="hr"></div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
+        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
+      </svg>
+      <div class="hr"></div>
+    </div>
+
+    <p class="section-script fade">Той иелері:</p>
+    <p class="parents-script fade" style="transition-delay:.1s">Жасулан – Линария</p>
+
+    <div class="divider fade" style="transition-delay:.15s;margin:36px auto">
+      <div class="hr"></div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
+        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
+      </svg>
+      <div class="hr"></div>
+    </div>
+
+    <p class="section-script fade" style="transition-delay:.2s">Той салтанаты:</p>
+    <div class="event-info fade" style="transition-delay:.25s;margin-top:10px">
+      <p>2 Тамыз 2026 жылы</p>
+      <p>Сағат 19:00-де басталады</p>
+    </div>
+
+    <!-- Calendar: August 2026 (Aug 1 = Saturday) -->
+    <div class="calendar fade" style="transition-delay:.3s">
+      <p class="cal-month">Тамыз 2026</p>
+      <div class="cal-grid">
+        <div class="cal-hd">ДС</div><div class="cal-hd">СС</div><div class="cal-hd">СР</div>
+        <div class="cal-hd">БС</div><div class="cal-hd">ЖМ</div><div class="cal-hd">СБ</div><div class="cal-hd">ЖС</div>
+
+        <div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div>
+        <div class="cal-empty"></div><div class="cal-empty"></div>
+        <div class="cal-d">1</div><div class="cal-d today">2</div>
+
+        <div class="cal-d">3</div><div class="cal-d">4</div><div class="cal-d">5</div>
+        <div class="cal-d">6</div><div class="cal-d">7</div><div class="cal-d">8</div><div class="cal-d">9</div>
+
+        <div class="cal-d">10</div><div class="cal-d">11</div><div class="cal-d">12</div>
+        <div class="cal-d">13</div><div class="cal-d">14</div><div class="cal-d">15</div><div class="cal-d">16</div>
+
+        <div class="cal-d">17</div><div class="cal-d">18</div><div class="cal-d">19</div>
+        <div class="cal-d">20</div><div class="cal-d">21</div><div class="cal-d">22</div><div class="cal-d">23</div>
+
+        <div class="cal-d">24</div><div class="cal-d">25</div><div class="cal-d">26</div>
+        <div class="cal-d">27</div><div class="cal-d">28</div><div class="cal-d">29</div><div class="cal-d">30</div>
+
+        <div class="cal-d">31</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     VENUE
+══════════════════════════════════════════ -->
+<section id="venue">
+  <div class="wrap">
+    <div class="divider fade">
+      <div class="hr"></div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
+        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
+      </svg>
+      <div class="hr"></div>
+    </div>
+
+    <p class="section-script fade">Той өтетін жер:</p>
+    <p class="venue-name fade" style="transition-delay:.1s">Адай мейрамханасы</p>
+    <p class="venue-note fade" style="transition-delay:.15s">Мекенжай жақында белгілі болады</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     RSVP
+══════════════════════════════════════════ -->
+<section id="rsvp">
+  <div class="wrap">
+    <div class="divider fade">
+      <div class="hr"></div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
+        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
+      </svg>
+      <div class="hr"></div>
+    </div>
+
+    <p class="rsvp-title fade">
+      Тойға қатысуыңызды<br>
+      растауыңызды сұраймыз:
+    </p>
+
+    <a href="#" class="rsvp-btn fade" id="rsvp-link" style="transition-delay:.1s" target="_blank">
+      Жауапты жіберу
+    </a>
+    <p class="rsvp-sub fade" style="transition-delay:.15s">Google Forms арқылы</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CLOSING
+══════════════════════════════════════════ -->
+<section id="closing" style="position:relative;overflow:hidden">
+
+  <svg class="side-deco" style="right:-24px;bottom:0;width:140px" viewBox="0 0 140 220" fill="none">
+    <path d="M140 220 C120 180,80 160,60 120 C40 80,60 40,40 0" stroke="#3a3530" stroke-width="1"/>
+    <path d="M110 200 C100 168,70 150,60 124" stroke="#3a3530" stroke-width=".7"/>
+    <ellipse cx="92" cy="168" rx="9" ry="14" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(20 92 168)"/>
+    <ellipse cx="72" cy="140" rx="7" ry="11" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(10 72 140)"/>
+    <circle cx="106" cy="145" r="4" fill="none" stroke="#3a3530" stroke-width=".6"/>
+  </svg>
+
+  <div class="wrap" style="padding-bottom:100px">
+    <p class="closing-script fade">
+      Келіңіздер,<br>
+      қуанышымыздың қадірлі<br>
+      қонағы болыңыздар!
+    </p>
+
+    <div class="divider fade" style="transition-delay:.1s;margin-top:44px">
+      <div class="hr"></div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
+        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
+        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
+      </svg>
+      <div class="hr"></div>
+    </div>
+
+    <p class="couple-script fade" style="transition-delay:.15s;font-size:38px;margin-top:24px">Tamerlan & Alina</p>
+    <p class="label-sm fade" style="transition-delay:.2s;margin-top:10px">2 · 08 · 2026</p>
+  </div>
+</section>
+
+
+<script>
+  /* ── Countdown ── */
+  const WEDDING = new Date('2026-08-02T19:00:00');
+
+  function tick() {
+    const diff = WEDDING - Date.now();
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML =
+        '<p style="font-size:14px;letter-spacing:3px;color:var(--accent)">ТОЙ БАСТАЛДЫ!</p>';
+      return;
+    }
+    const d = Math.floor(diff / 864e5);
+    const h = Math.floor(diff % 864e5 / 36e5);
+    const m = Math.floor(diff % 36e5 / 6e4);
+    const s = Math.floor(diff % 6e4 / 1e3);
+    document.getElementById('cd-d').textContent = d;
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ── Fade-in on scroll ── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+  /* ── Music placeholder ── */
+  function toggleMusic() {
+    alert('Музыка жақында қосылады\n\nМузыка будет добавлена позже');
+  }
+
+  /* ── RSVP link updater (call setRsvpLink("URL") when ready) ── */
+  window.setRsvpLink = function(url) {
+    document.getElementById('rsvp-link').href = url;
+  };
+</script>
+
+</body>
+</html>
