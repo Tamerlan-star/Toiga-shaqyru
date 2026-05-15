@@ -140,50 +140,94 @@
 
     /* ══════════════════════ PARENTS ══════════════════════ */
     .section-script { font-family: var(--script); font-size: 48px; color: var(--text); }
-    .parents-script { font-family: var(--script); font-size: 46px; color: var(--text); margin-top: 4px; }
-
-    /* ══════════════════════ DATE ══════════════════════ */
-    .date-big {
-      font-size: 21px; letter-spacing: 4px;
-      text-transform: uppercase; line-height: 2.1; color: var(--text);
-    }
-
-    /* ══════════════════════ COUNTDOWN ══════════════════════ */
-    .cd-frame {
-      font-size: 15px; letter-spacing: 3px;
+    .parents-label {
+      font-size: 11px; letter-spacing: 5px;
       color: var(--accent); text-transform: uppercase;
       margin-bottom: 16px;
     }
-    .countdown {
-      display: flex; gap: 20px; justify-content: center;
-      margin: 4px 0;
+    .parents-names-big {
+      font-family: var(--script); font-size: 58px;
+      color: var(--text); line-height: 1.45;
     }
-    .cd-item { text-align: center; }
-    .cd-num {
-      display: block; font-size: 40px; font-weight: 300;
-      line-height: 1; margin-bottom: 5px; min-width: 52px;
+
+    /* ══════════════════════ DATE ══════════════════════ */
+    .date-grid {
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 24px;
     }
-    .cd-lbl { font-size: 11px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; }
-    .cd-after {
-      font-size: 15px; letter-spacing: 3px;
+    .date-unit { flex: 1; text-align: center; }
+    .date-vsep { width: 1px; height: 64px; background: var(--line); flex-shrink: 0; margin: 0 6px; }
+    .date-num {
+      display: block;
+      font-family: var(--display); font-size: 58px; font-weight: 400;
+      line-height: 1; color: var(--text);
+    }
+    .date-lbl {
+      display: block; margin-top: 10px;
+      font-size: 10px; letter-spacing: 4px;
       color: var(--accent); text-transform: uppercase;
-      margin-top: 14px;
+    }
+    .time-block { margin-top: 28px; }
+    .time-num {
+      display: block;
+      font-family: var(--display); font-size: 64px; font-weight: 400;
+      line-height: 1; color: var(--text);
+    }
+    .time-lbl {
+      display: block; margin-top: 10px;
+      font-size: 10px; letter-spacing: 4px;
+      color: var(--accent); text-transform: uppercase;
+    }
+
+    /* ══════════════════════ COUNTDOWN ══════════════════════ */
+    .cd-frame-top {
+      font-family: var(--serif); font-style: italic;
+      font-size: 24px; color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .cd-boxes-row {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 10px; max-width: 340px; margin: 0 auto;
+    }
+    .cd-box-single {
+      max-width: 110px; margin: 10px auto 0;
+    }
+    .cd-box {
+      border: 1px solid var(--line);
+      padding: 18px 8px; text-align: center;
+    }
+    .cd-bnum {
+      display: block; font-size: 54px; font-weight: 300;
+      line-height: 1; margin-bottom: 8px;
+    }
+    .cd-blbl {
+      font-size: 10px; letter-spacing: 3px;
+      color: var(--accent); text-transform: uppercase;
+    }
+    .cd-frame-bot {
+      font-family: var(--serif); font-style: italic;
+      font-size: 24px; color: var(--accent);
+      margin-top: 18px;
     }
 
     /* ══════════════════════ CALENDAR ══════════════════════ */
-    .calendar { margin: 28px auto 0; max-width: 310px; }
-    .cal-month { font-size: 11px; letter-spacing: 5px; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
-    .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); row-gap: 2px; }
-    .cal-hd { font-size: 10px; letter-spacing: 1.5px; color: var(--accent); text-align: center; padding: 4px 0; }
-    .cal-d { font-size: 16px; text-align: center; padding: 9px 2px; color: var(--text); position: relative; }
-    .cal-d.wedding { font-weight: 700; padding-top: 22px; }
-    .cal-d.wedding::after {
-      content: '♥';
-      position: absolute; top: 3px; left: 50%;
-      transform: translateX(-50%);
-      font-size: 15px; color: var(--text); opacity: .55;
+    .calendar { margin: 16px auto 0; max-width: 360px; }
+    .cal-month {
+      font-family: var(--display); font-style: italic;
+      font-size: 46px; color: var(--text);
+      margin-bottom: 20px; letter-spacing: 0;
     }
-    .cal-empty { padding: 7px 2px; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); row-gap: 2px; }
+    .cal-hd { font-size: 11px; letter-spacing: 2px; color: var(--accent); text-align: center; padding: 6px 0; }
+    .cal-d { font-size: 20px; text-align: center; padding: 10px 2px; color: var(--text); }
+    .cal-d.wedding { padding: 6px 2px; }
+    .wed-dot {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--text); color: var(--bg);
+      font-size: 20px; font-weight: 600;
+    }
+    .cal-empty { padding: 10px 2px; }
 
     /* ══════════════════════ VENUE ══════════════════════ */
     .venue-name {
@@ -297,7 +341,12 @@
       .couple-script { font-size: 42px; }
       .invite-names { font-size: 50px; }
       .section-script { font-size: 36px; }
-      .parents-script { font-size: 32px; }
+      .parents-names-big { font-size: 46px; }
+      .date-num { font-size: 46px; }
+      .time-num { font-size: 52px; }
+      .cd-bnum { font-size: 44px; }
+      .cal-month { font-size: 36px; }
+      .cal-d { font-size: 17px; }
       .closing-script { font-size: 33px; }
       .form-title { font-size: 44px; }
     }
@@ -437,8 +486,8 @@
     <div class="divider fade">
       <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
     </div>
-    <p class="section-script fade">Той иелері:</p>
-    <p class="parents-script fade" style="transition-delay:.1s">Жасулан – Зульфия</p>
+    <p class="parents-label fade">Той иелері</p>
+    <p class="parents-names-big fade" style="transition-delay:.1s">Жасулан · Зульфия</p>
   </div>
 </section>
 
@@ -451,10 +500,25 @@
     <div class="divider fade">
       <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
     </div>
-    <p class="section-script fade">Той салтанаты:</p>
-    <div class="date-big fade" style="transition-delay:.1s;margin-top:12px">
-      <p>02 Тамыз 2026 жылы</p>
-      <p>Сағат 19:00-де басталады</p>
+    <div class="date-grid fade" style="transition-delay:.1s">
+      <div class="date-unit">
+        <span class="date-num">02</span>
+        <span class="date-lbl">Күні</span>
+      </div>
+      <div class="date-vsep"></div>
+      <div class="date-unit">
+        <span class="date-num">08</span>
+        <span class="date-lbl">Тамыз</span>
+      </div>
+      <div class="date-vsep"></div>
+      <div class="date-unit">
+        <span class="date-num">2026</span>
+        <span class="date-lbl">Жыл</span>
+      </div>
+    </div>
+    <div class="time-block fade" style="transition-delay:.2s">
+      <span class="time-num">19:00</span>
+      <span class="time-lbl">Уақыт</span>
     </div>
   </div>
 </section>
@@ -465,14 +529,16 @@
 ════════════════════════════════════════ -->
 <section id="countdown-section">
   <div class="wrap">
-    <p class="cd-frame fade">Тойға дейін</p>
-    <div class="countdown fade" style="transition-delay:.08s" id="countdown">
-      <div class="cd-item"><span class="cd-num" id="cd-d">—</span><span class="cd-lbl">Күн</span></div>
-      <div class="cd-item"><span class="cd-num" id="cd-h">—</span><span class="cd-lbl">Сағат</span></div>
-      <div class="cd-item"><span class="cd-num" id="cd-m">—</span><span class="cd-lbl">Минут</span></div>
-      <div class="cd-item"><span class="cd-num" id="cd-s">—</span><span class="cd-lbl">Секунд</span></div>
+    <p class="cd-frame-top fade">Тойға дейін</p>
+    <div class="cd-boxes-row fade" style="transition-delay:.08s" id="countdown">
+      <div class="cd-box"><span class="cd-bnum" id="cd-d">—</span><span class="cd-blbl">Күн</span></div>
+      <div class="cd-box"><span class="cd-bnum" id="cd-h">—</span><span class="cd-blbl">Сағат</span></div>
+      <div class="cd-box"><span class="cd-bnum" id="cd-m">—</span><span class="cd-blbl">Минут</span></div>
     </div>
-    <p class="cd-after fade" style="transition-delay:.15s">қалды</p>
+    <div class="cd-box-single fade" style="transition-delay:.12s">
+      <div class="cd-box"><span class="cd-bnum" id="cd-s">—</span><span class="cd-blbl">Секунд</span></div>
+    </div>
+    <p class="cd-frame-bot fade" style="transition-delay:.16s">қалды</p>
   </div>
 </section>
 
@@ -491,7 +557,7 @@
       <div class="cal-grid">
         <div class="cal-hd">ДС</div><div class="cal-hd">СС</div><div class="cal-hd">СР</div><div class="cal-hd">БС</div><div class="cal-hd">ЖМ</div><div class="cal-hd">СБ</div><div class="cal-hd">ЖС</div>
         <div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div>
-        <div class="cal-d">1</div><div class="cal-d wedding">2</div>
+        <div class="cal-d">1</div><div class="cal-d wedding"><span class="wed-dot">2</span></div>
         <div class="cal-d">3</div><div class="cal-d">4</div><div class="cal-d">5</div><div class="cal-d">6</div><div class="cal-d">7</div><div class="cal-d">8</div><div class="cal-d">9</div>
         <div class="cal-d">10</div><div class="cal-d">11</div><div class="cal-d">12</div><div class="cal-d">13</div><div class="cal-d">14</div><div class="cal-d">15</div><div class="cal-d">16</div>
         <div class="cal-d">17</div><div class="cal-d">18</div><div class="cal-d">19</div><div class="cal-d">20</div><div class="cal-d">21</div><div class="cal-d">22</div><div class="cal-d">23</div>
