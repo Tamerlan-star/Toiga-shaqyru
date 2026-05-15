@@ -11,14 +11,14 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg:        #f0ece8;
-      --bg-alt:    #e8e3de;
-      --text:      #1a1714;
-      --accent:    #7a6e65;
-      --line:      rgba(58,48,42,0.22);
-      --serif:     'Cormorant Garamond', Georgia, serif;
-      --script:    'Great Vibes', cursive;
-      --display:   'Playfair Display', Georgia, serif;
+      --bg:      #f0ece8;
+      --bg-alt:  #e8e3de;
+      --text:    #1a1714;
+      --accent:  #7a6e65;
+      --line:    rgba(58,48,42,0.22);
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --script:  'Great Vibes', cursive;
+      --display: 'Playfair Display', Georgia, serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -33,17 +33,13 @@
     /* ─── Music button ─── */
     #music-btn {
       position: fixed;
-      top: 18px;
-      right: 18px;
-      width: 54px;
-      height: 54px;
+      top: 18px; right: 18px;
+      width: 54px; height: 54px;
       border-radius: 50%;
       border: 1px solid var(--line);
       background: var(--bg);
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       z-index: 200;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
       transition: background .25s;
@@ -51,347 +47,242 @@
     #music-btn:hover { background: var(--bg-alt); }
     #music-btn svg { width: 20px; height: 20px; }
 
-    /* ─── Sections ─── */
+    /* ─── Layout ─── */
     .wrap {
       max-width: 460px;
       margin: 0 auto;
-      padding: 72px 28px;
+      padding: 64px 28px;
       text-align: center;
       position: relative;
     }
 
-    /* ─── Fade-in on scroll ─── */
+    /* ─── Fade-in ─── */
     .fade {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px);
       transition: opacity .7s ease, transform .7s ease;
     }
-    .fade.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade.visible { opacity: 1; transform: translateY(0); }
 
     /* ─── Star divider ─── */
     .divider {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 28px auto;
-      max-width: 280px;
+      display: flex; align-items: center; gap: 14px;
+      margin: 24px auto;
+      max-width: 260px;
     }
     .divider .hr { flex: 1; height: 1px; background: var(--line); }
 
-    /* ─── HERO ─── */
+    /* ══════════════════════ HERO ══════════════════════ */
     #hero {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
     }
-
-    /* Corner botanical decorations */
-    .corner-svg {
-      position: absolute;
-      pointer-events: none;
-      opacity: .13;
-    }
+    .corner-svg { position: absolute; pointer-events: none; opacity: .13; }
 
     .label-sm {
-      font-size: 11.5px;
-      letter-spacing: 5px;
-      color: var(--accent);
-      text-transform: uppercase;
-      font-weight: 400;
+      font-size: 11.5px; letter-spacing: 5px;
+      color: var(--accent); text-transform: uppercase;
     }
 
-    /* ─── Initials block ─── */
+    /* Initials */
     .initials-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      margin: 24px 0 18px;
-      width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 22px 0 16px;
     }
-
-    .initial-wrap {
-      position: relative;
-      width: 140px;
-      height: 175px;
-      flex-shrink: 0;
-    }
-
+    .initial-wrap { position: relative; width: 140px; height: 175px; flex-shrink: 0; }
     .initial-letter {
-      position: absolute;
-      inset: 0;
-      font-family: var(--display);
-      font-size: 170px;
-      line-height: 1;
+      position: absolute; inset: 0;
+      font-family: var(--display); font-size: 170px; line-height: 1;
       color: var(--text);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 0;
+      display: flex; align-items: flex-end; justify-content: center;
     }
+    .initial-floral { position: absolute; inset: 0; pointer-events: none; }
 
-    .initial-floral {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+    .vdivider {
+      display: flex; flex-direction: column; align-items: center; padding: 0 10px;
     }
-
-    .line-divider {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 10px;
-      gap: 0;
-    }
-    .line-divider .vline { width: 1px; height: 52px; background: var(--line); }
+    .vline { width: 1px; height: 52px; background: var(--line); }
 
     .couple-script {
-      font-family: var(--script);
-      font-size: 52px;
-      color: var(--text);
-      line-height: 1.15;
-      margin-bottom: 18px;
+      font-family: var(--script); font-size: 52px;
+      color: var(--text); line-height: 1.15; margin-bottom: 16px;
     }
-
     .hero-date {
-      font-size: 16px;
-      letter-spacing: 5px;
+      font-size: 15px; letter-spacing: 5px;
+      color: var(--text); text-transform: uppercase; margin-bottom: 44px;
+    }
+    .scroll-hint {
+      font-size: 10px; letter-spacing: 4px;
+      color: var(--accent); text-transform: uppercase;
+      animation: breathe 2.4s infinite;
+    }
+    @keyframes breathe { 0%,100%{opacity:.45} 50%{opacity:1} }
+
+    /* ══════════════════════ INVITATION ══════════════════════ */
+    .invite-intro {
+      font-family: var(--serif); font-size: 18px; letter-spacing: 1.5px;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+    }
+    .invite-names {
+      font-family: var(--script); font-size: 62px;
+      color: var(--text); line-height: 1.1; margin-bottom: 20px;
+    }
+    .invite-body {
+      font-size: 15px; letter-spacing: 1.5px; line-height: 1.95;
       color: var(--text);
-      text-transform: uppercase;
-      margin-bottom: 36px;
     }
 
-    /* ─── Countdown ─── */
+    /* ══════════════════════ PARENTS ══════════════════════ */
+    .section-script { font-family: var(--script); font-size: 44px; color: var(--text); }
+    .parents-script { font-family: var(--script); font-size: 40px; color: var(--text); margin-top: 4px; }
+
+    /* ══════════════════════ DATE ══════════════════════ */
+    .date-big {
+      font-size: 17px; letter-spacing: 4px;
+      text-transform: uppercase; line-height: 2; color: var(--text);
+    }
+
+    /* ══════════════════════ COUNTDOWN ══════════════════════ */
+    .cd-frame {
+      font-size: 12px; letter-spacing: 3px;
+      color: var(--accent); text-transform: uppercase;
+      margin-bottom: 16px;
+    }
     .countdown {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      margin-bottom: 44px;
+      display: flex; gap: 20px; justify-content: center;
+      margin: 4px 0;
     }
     .cd-item { text-align: center; }
     .cd-num {
-      display: block;
-      font-size: 38px;
-      font-weight: 300;
-      line-height: 1;
-      margin-bottom: 5px;
-      min-width: 56px;
+      display: block; font-size: 40px; font-weight: 300;
+      line-height: 1; margin-bottom: 5px; min-width: 52px;
     }
-    .cd-lbl {
-      font-size: 9.5px;
-      letter-spacing: 3px;
-      color: var(--accent);
-      text-transform: uppercase;
+    .cd-lbl { font-size: 9px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; }
+    .cd-after {
+      font-size: 12px; letter-spacing: 3px;
+      color: var(--accent); text-transform: uppercase;
+      margin-top: 14px;
     }
 
-    .scroll-hint {
-      font-size: 10px;
-      letter-spacing: 4px;
-      color: var(--accent);
-      text-transform: uppercase;
-      animation: breathe 2.4s infinite;
-    }
-    @keyframes breathe { 0%,100%{opacity:.5} 50%{opacity:1} }
-
-    /* ─── GREETING ─── */
-    .greeting-text {
-      font-family: var(--script);
-      font-size: 36px;
-      line-height: 1.6;
-      color: var(--text);
-    }
-
-    /* ─── INVITATION ─── */
-    .sizdерdi {
-      font-size: 12px;
-      letter-spacing: 5px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .name-big {
-      font-family: var(--script);
-      font-size: 60px;
-      line-height: 1.05;
-      color: var(--text);
-    }
-    .name-big.right { text-align: right; }
-
-    .pen-label {
-      font-size: 11px;
-      letter-spacing: 7px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin: 10px 0;
-    }
-
-    .invite-body {
-      font-size: 14px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      line-height: 1.9;
-      color: var(--text);
-      margin-top: 28px;
-    }
-
-    /* ─── DETAILS ─── */
-    .section-script { font-family: var(--script); font-size: 44px; color: var(--text); }
-    .parents-script { font-family: var(--script); font-size: 38px; color: var(--text); margin-top: 4px; }
-
-    .event-info {
-      font-size: 15px;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      line-height: 2;
-      color: var(--text);
-    }
-
-    /* ─── Calendar ─── */
-    .calendar {
-      margin: 32px auto 0;
-      max-width: 310px;
-    }
-    .cal-month {
-      font-size: 11px;
-      letter-spacing: 5px;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .cal-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      row-gap: 2px;
-    }
-    .cal-hd {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      color: var(--accent);
-      text-align: center;
-      padding: 4px 0;
-    }
-    .cal-d {
-      font-size: 14px;
-      text-align: center;
-      padding: 7px 2px;
-      color: var(--text);
-      position: relative;
-    }
-    .cal-d.today {
-      font-weight: 700;
-    }
-    .cal-d.today::before {
+    /* ══════════════════════ CALENDAR ══════════════════════ */
+    .calendar { margin: 28px auto 0; max-width: 310px; }
+    .cal-month { font-size: 11px; letter-spacing: 5px; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); row-gap: 2px; }
+    .cal-hd { font-size: 10px; letter-spacing: 1.5px; color: var(--accent); text-align: center; padding: 4px 0; }
+    .cal-d { font-size: 14px; text-align: center; padding: 7px 2px; color: var(--text); position: relative; }
+    .cal-d.wedding { font-weight: 700; }
+    .cal-d.wedding::before {
       content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
       width: 30px; height: 30px;
-      border-radius: 50%;
-      border: 1.2px solid var(--text);
+      border-radius: 50%; border: 1.2px solid var(--text);
     }
-    /* Heart overlay on wedding day */
-    .cal-d.today::after {
+    .cal-d.wedding::after {
       content: '♡';
-      position: absolute;
-      top: -14px; left: 50%;
+      position: absolute; top: -13px; left: 50%;
       transform: translateX(-50%);
-      font-size: 18px;
-      color: var(--text);
-      opacity: .5;
-      line-height: 1;
+      font-size: 17px; color: var(--text); opacity: .45;
     }
     .cal-empty { padding: 7px 2px; }
 
-    /* ─── VENUE ─── */
+    /* ══════════════════════ VENUE ══════════════════════ */
     .venue-name {
-      font-size: 17px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text);
-      margin: 12px 0 8px;
-    }
-    .venue-note {
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-top: 14px;
-      border: 1px solid var(--line);
-      padding: 14px 20px;
-      display: inline-block;
+      font-size: 16px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--text);
+      line-height: 1.9; margin-top: 10px;
     }
 
-    /* ─── RSVP ─── */
-    .rsvp-title {
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      line-height: 1.9;
-      color: var(--text);
-      margin-bottom: 28px;
+    /* ══════════════════════ FORM (Анкета) ══════════════════════ */
+    #anketa { background: var(--bg-alt); }
+
+    .form-title { font-family: var(--script); font-size: 54px; color: var(--text); line-height: 1; }
+    .form-sub {
+      font-family: var(--serif); font-style: italic;
+      font-size: 16px; letter-spacing: 1px; color: var(--accent);
+      margin: 8px 0 28px;
     }
-    .rsvp-btn {
-      display: inline-block;
+
+    .field-label {
+      display: block; text-align: left;
+      font-size: 10px; letter-spacing: 3px;
+      color: var(--accent); text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .field-group { margin-bottom: 20px; }
+
+    .field-input, .field-textarea {
+      width: 100%; background: var(--bg);
+      border: 1px solid var(--line);
+      font-family: var(--serif); font-size: 15px;
+      color: var(--text);
+      padding: 13px 16px;
+      outline: none;
+      transition: border-color .2s;
+      -webkit-appearance: none;
+    }
+    .field-input::placeholder, .field-textarea::placeholder { color: var(--accent); opacity: .7; }
+    .field-input:focus, .field-textarea:focus { border-color: var(--accent); }
+    .field-textarea { resize: none; height: 90px; }
+
+    /* Attendance toggle */
+    .attend-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .attend-btn {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      font-family: var(--serif); font-size: 15px;
+      color: var(--text); padding: 14px 8px;
+      cursor: pointer; transition: all .2s;
+      -webkit-appearance: none;
+    }
+    .attend-btn.selected {
       background: #6b6058;
-      color: #f0ece8;
-      font-family: var(--serif);
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      padding: 17px 46px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
+      color: var(--bg);
+      border-color: #6b6058;
+    }
+
+    .submit-btn {
+      width: 100%; margin-top: 24px;
+      background: #6b6058; color: var(--bg);
+      font-family: var(--serif); font-size: 12px;
+      letter-spacing: 5px; text-transform: uppercase;
+      padding: 18px; border: none; cursor: pointer;
       transition: background .25s;
     }
-    .rsvp-btn:hover { background: #4e4540; }
-    .rsvp-sub {
-      margin-top: 12px;
-      font-size: 10px;
-      letter-spacing: 2.5px;
-      color: var(--accent);
-      text-transform: uppercase;
+    .submit-btn:hover { background: #4e4540; }
+
+    .form-success {
+      display: none;
+      font-family: var(--script); font-size: 42px;
+      color: var(--text); padding: 40px 0;
     }
 
-    /* ─── CLOSING ─── */
+    /* ══════════════════════ CLOSING ══════════════════════ */
     .closing-script {
-      font-family: var(--script);
-      font-size: 40px;
-      line-height: 1.65;
-      color: var(--text);
+      font-family: var(--script); font-size: 40px;
+      color: var(--text); line-height: 1.65;
     }
 
-    /* ─── Botanical side decoration (mid-page) ─── */
-    .side-deco {
-      position: absolute;
-      pointer-events: none;
-      opacity: .08;
-    }
+    /* Side botanicals */
+    .side-deco { position: absolute; pointer-events: none; opacity: .08; }
 
     @media (max-width: 370px) {
       .initial-wrap { width: 115px; height: 145px; }
-      .initial-letter { font-size: 140px; }
+      .initial-letter { font-size: 138px; }
       .couple-script { font-size: 42px; }
-      .greeting-text { font-size: 30px; }
-      .name-big { font-size: 48px; }
+      .invite-names { font-size: 50px; }
       .section-script { font-size: 36px; }
       .parents-script { font-size: 32px; }
-      .closing-script { font-size: 34px; }
+      .closing-script { font-size: 33px; }
+      .form-title { font-size: 44px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     MUSIC BUTTON
-══════════════════════════════════════════ -->
+<!-- Music button -->
 <button id="music-btn" onclick="toggleMusic()" title="Музыка">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M9 18V5l12-2v13"/>
@@ -400,12 +291,12 @@
   </svg>
 </button>
 
-<!-- ══════════════════════════════════════════
-     HERO
-══════════════════════════════════════════ -->
+
+<!-- ════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════ -->
 <section id="hero">
 
-  <!-- Botanical corners -->
   <svg class="corner-svg" style="top:0;right:0;width:190px" viewBox="0 0 190 220" fill="none">
     <path d="M190 0 C165 30,130 45,100 38 C78 33,58 20,38 28 C18 36,10 58,22 78 C34 98,55 105,48 128 C41 151,14 162,0 180" stroke="#3a3530" stroke-width="1"/>
     <path d="M190 18 C170 42,145 53,122 46 C106 41,92 28,72 33 C52 38,42 58,52 76" stroke="#3a3530" stroke-width=".7"/>
@@ -428,14 +319,11 @@
   <div class="wrap" style="z-index:1">
     <p class="label-sm fade">Тойға Шақыру</p>
 
-    <!-- T ✦ A -->
     <div class="initials-row fade" style="transition-delay:.1s">
-
-      <!-- Letter T with florals -->
+      <!-- T -->
       <div class="initial-wrap">
         <div class="initial-letter">T</div>
         <svg class="initial-floral" viewBox="0 0 140 175" fill="none">
-          <!-- left-side botanical -->
           <circle cx="18" cy="42" r="7.5" stroke="#1a1714" stroke-width=".7"/>
           <path d="M12 36 C8 28,14 20,20 26" stroke="#1a1714" stroke-width=".6"/>
           <path d="M24 36 C30 26,38 30,32 38" stroke="#1a1714" stroke-width=".6"/>
@@ -443,14 +331,12 @@
           <ellipse cx="10" cy="68" rx="5" ry="9" fill="none" stroke="#1a1714" stroke-width=".6" transform="rotate(-20 10 68)"/>
           <ellipse cx="26" cy="72" rx="4" ry="8" fill="none" stroke="#1a1714" stroke-width=".6" transform="rotate(20 26 72)"/>
           <circle cx="12" cy="88" r="2.5" fill="none" stroke="#1a1714" stroke-width=".55"/>
-          <!-- tiny leaf cluster -->
           <path d="M6 56 C2 48,8 42,12 50" stroke="#1a1714" stroke-width=".55"/>
           <path d="M28 50 C34 44,38 50,32 56" stroke="#1a1714" stroke-width=".55"/>
         </svg>
       </div>
 
-      <!-- vertical divider with star -->
-      <div class="line-divider">
+      <div class="vdivider">
         <div class="vline"></div>
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="margin:5px 0">
           <line x1="9" y1="0" x2="9" y2="18" stroke="#1a1714" stroke-width=".8"/>
@@ -461,11 +347,10 @@
         <div class="vline"></div>
       </div>
 
-      <!-- Letter A with florals -->
+      <!-- A -->
       <div class="initial-wrap">
         <div class="initial-letter">А</div>
         <svg class="initial-floral" viewBox="0 0 140 175" fill="none">
-          <!-- right-side botanical (mirrored) -->
           <circle cx="122" cy="42" r="7.5" stroke="#1a1714" stroke-width=".7"/>
           <path d="M128 36 C132 28,126 20,120 26" stroke="#1a1714" stroke-width=".6"/>
           <path d="M116 36 C110 26,102 30,108 38" stroke="#1a1714" stroke-width=".6"/>
@@ -480,151 +365,107 @@
     </div>
 
     <p class="couple-script fade" style="transition-delay:.2s">Tamerlan & Alina</p>
-    <p class="hero-date fade" style="transition-delay:.3s">2 Тамыз 2026</p>
+    <p class="hero-date fade" style="transition-delay:.3s">2 · Тамыз · 2026</p>
+    <p class="scroll-hint fade" style="transition-delay:.4s">↓ &ensp; Жоғары Көтеріңіз &ensp; ↓</p>
+  </div>
+</section>
 
-    <!-- Countdown -->
-    <div class="countdown fade" style="transition-delay:.4s" id="countdown">
+
+<!-- ════════════════════════════════════════
+     2. INVITATION TEXT
+════════════════════════════════════════ -->
+<section id="invitation" style="position:relative;overflow:hidden">
+  <svg class="side-deco" style="left:-20px;top:50%;transform:translateY(-50%);width:80px" viewBox="0 0 80 260" fill="none">
+    <path d="M40 0 C20 50,60 100,40 150 C20 200,60 240,40 260" stroke="#1a1714" stroke-width="1"/>
+    <path d="M40 55 C10 65,2 83,22 93" stroke="#1a1714" stroke-width=".8"/>
+    <path d="M40 115 C70 125,78 145,56 153" stroke="#1a1714" stroke-width=".8"/>
+    <ellipse cx="14" cy="88" rx="7" ry="12" fill="none" stroke="#1a1714" stroke-width=".7" transform="rotate(-15 14 88)"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="divider fade">
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
+    </div>
+
+    <p class="invite-intro fade">Құрметті қонақтар!</p>
+    <p class="invite-body fade" style="transition-delay:.08s">Сіздерді</p>
+    <p class="invite-names fade" style="transition-delay:.15s">Тамерлан<br>және<br>Алина</p>
+    <p class="invite-body fade" style="transition-delay:.22s;margin-top:4px">
+      балаларымыздың үйлену тойына<br>
+      арналған салтанатты ақ дастарқанға<br>
+      қадірлі қонағы болуға шақырамыз!
+    </p>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     3. ТОЙ ИЕЛЕРІ
+════════════════════════════════════════ -->
+<section id="parents">
+  <div class="wrap">
+    <div class="divider fade">
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
+    </div>
+    <p class="section-script fade">Той иелері:</p>
+    <p class="parents-script fade" style="transition-delay:.1s">Жасулан – Зульфия</p>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     4. ДАТА
+════════════════════════════════════════ -->
+<section id="date-section">
+  <div class="wrap">
+    <div class="divider fade">
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
+    </div>
+    <p class="section-script fade">Той салтанаты:</p>
+    <div class="date-big fade" style="transition-delay:.1s;margin-top:12px">
+      <p>02 Тамыз 2026 жылы</p>
+      <p>Сағат 19:00-де басталады</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     5. COUNTDOWN
+════════════════════════════════════════ -->
+<section id="countdown-section">
+  <div class="wrap">
+    <p class="cd-frame fade">Тойға дейін</p>
+    <div class="countdown fade" style="transition-delay:.08s" id="countdown">
       <div class="cd-item"><span class="cd-num" id="cd-d">—</span><span class="cd-lbl">Күн</span></div>
       <div class="cd-item"><span class="cd-num" id="cd-h">—</span><span class="cd-lbl">Сағат</span></div>
       <div class="cd-item"><span class="cd-num" id="cd-m">—</span><span class="cd-lbl">Минут</span></div>
       <div class="cd-item"><span class="cd-num" id="cd-s">—</span><span class="cd-lbl">Секунд</span></div>
     </div>
-
-    <p class="scroll-hint fade" style="transition-delay:.5s">↓ &ensp; Жоғары Көтеріңіз &ensp; ↓</p>
+    <p class="cd-after fade" style="transition-delay:.15s">қалды</p>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     GREETING
-══════════════════════════════════════════ -->
-<section id="greeting">
-  <div class="wrap">
+<!-- ════════════════════════════════════════
+     6. CALENDAR
+════════════════════════════════════════ -->
+<section id="calendar-section">
+  <div class="wrap" style="padding-top:0">
     <div class="divider fade">
-      <div class="hr"></div>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
-        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
-      </svg>
-      <div class="hr"></div>
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
     </div>
-
-    <p class="greeting-text fade">
-      Құрметті<br>
-      ағайын-туыс, бағырлар,<br>
-      куда-жекжат,<br>
-      нағашы-жиен, бөлелер,<br>
-      құрбы-құрдас,<br>
-      дос-жарандар,<br>
-      әріптестер, көршілер!
-    </p>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     INVITATION
-══════════════════════════════════════════ -->
-<section id="invitation" style="position:relative;overflow:hidden">
-  <!-- Side botanical -->
-  <svg class="side-deco" style="left:-28px;top:50%;transform:translateY(-50%);width:100px" viewBox="0 0 80 280" fill="none">
-    <path d="M40 0 C20 50,60 100,40 150 C20 200,60 240,40 280" stroke="#1a1714" stroke-width="1"/>
-    <path d="M40 55 C10 65,2 85,22 95" stroke="#1a1714" stroke-width=".8"/>
-    <path d="M40 110 C70 120,78 140,58 150" stroke="#1a1714" stroke-width=".8"/>
-    <path d="M40 168 C10 178,2 198,22 208" stroke="#1a1714" stroke-width=".8"/>
-    <ellipse cx="14" cy="90" rx="7" ry="12" fill="none" stroke="#1a1714" stroke-width=".7" transform="rotate(-15 14 90)"/>
-    <ellipse cx="64" cy="145" rx="7" ry="12" fill="none" stroke="#1a1714" stroke-width=".7" transform="rotate(15 64 145)"/>
-  </svg>
-
-  <div class="wrap">
-    <p class="sizdерdi fade">Сіздерді</p>
-    <p class="name-big fade" style="transition-delay:.1s">Тамерлан</p>
-    <p class="pen-label fade" style="transition-delay:.15s">ПЕН</p>
-    <p class="name-big right fade" style="transition-delay:.2s">Алина</p>
-
-    <div class="divider fade" style="transition-delay:.25s;margin:24px auto">
-      <div class="hr"></div>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <line x1="7" y1="0" x2="7" y2="14" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="0" y1="7" x2="14" y2="7" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="2" y1="2" x2="12" y2="12" stroke="#3a3530" stroke-width=".5"/>
-        <line x1="2" y1="12" x2="12" y2="2" stroke="#3a3530" stroke-width=".5"/>
-      </svg>
-      <div class="hr"></div>
-    </div>
-
-    <p class="invite-body fade" style="transition-delay:.3s">
-      Балаларымыздың үйлену<br>
-      тойына арналған салтанатты<br>
-      ақ дастарханымыздың<br>
-      қадірлі қонағы болуға<br>
-      шақырамыз!
-    </p>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     DETAILS — Parents + Date + Calendar
-══════════════════════════════════════════ -->
-<section id="details">
-  <div class="wrap">
-    <div class="divider fade">
-      <div class="hr"></div>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
-        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
-      </svg>
-      <div class="hr"></div>
-    </div>
-
-    <p class="section-script fade">Той иелері:</p>
-    <p class="parents-script fade" style="transition-delay:.1s">Жасулан – Линария</p>
-
-    <div class="divider fade" style="transition-delay:.15s;margin:36px auto">
-      <div class="hr"></div>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
-        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
-      </svg>
-      <div class="hr"></div>
-    </div>
-
-    <p class="section-script fade" style="transition-delay:.2s">Той салтанаты:</p>
-    <div class="event-info fade" style="transition-delay:.25s;margin-top:10px">
-      <p>2 Тамыз 2026 жылы</p>
-      <p>Сағат 19:00-де басталады</p>
-    </div>
-
-    <!-- Calendar: August 2026 (Aug 1 = Saturday) -->
-    <div class="calendar fade" style="transition-delay:.3s">
+    <!-- August 2026: Aug 1 = Saturday -->
+    <div class="calendar fade">
       <p class="cal-month">Тамыз 2026</p>
       <div class="cal-grid">
-        <div class="cal-hd">ДС</div><div class="cal-hd">СС</div><div class="cal-hd">СР</div>
-        <div class="cal-hd">БС</div><div class="cal-hd">ЖМ</div><div class="cal-hd">СБ</div><div class="cal-hd">ЖС</div>
-
-        <div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div>
-        <div class="cal-empty"></div><div class="cal-empty"></div>
-        <div class="cal-d">1</div><div class="cal-d today">2</div>
-
-        <div class="cal-d">3</div><div class="cal-d">4</div><div class="cal-d">5</div>
-        <div class="cal-d">6</div><div class="cal-d">7</div><div class="cal-d">8</div><div class="cal-d">9</div>
-
-        <div class="cal-d">10</div><div class="cal-d">11</div><div class="cal-d">12</div>
-        <div class="cal-d">13</div><div class="cal-d">14</div><div class="cal-d">15</div><div class="cal-d">16</div>
-
-        <div class="cal-d">17</div><div class="cal-d">18</div><div class="cal-d">19</div>
-        <div class="cal-d">20</div><div class="cal-d">21</div><div class="cal-d">22</div><div class="cal-d">23</div>
-
-        <div class="cal-d">24</div><div class="cal-d">25</div><div class="cal-d">26</div>
-        <div class="cal-d">27</div><div class="cal-d">28</div><div class="cal-d">29</div><div class="cal-d">30</div>
-
+        <div class="cal-hd">ДС</div><div class="cal-hd">СС</div><div class="cal-hd">СР</div><div class="cal-hd">БС</div><div class="cal-hd">ЖМ</div><div class="cal-hd">СБ</div><div class="cal-hd">ЖС</div>
+        <div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div>
+        <div class="cal-d">1</div><div class="cal-d wedding">2</div>
+        <div class="cal-d">3</div><div class="cal-d">4</div><div class="cal-d">5</div><div class="cal-d">6</div><div class="cal-d">7</div><div class="cal-d">8</div><div class="cal-d">9</div>
+        <div class="cal-d">10</div><div class="cal-d">11</div><div class="cal-d">12</div><div class="cal-d">13</div><div class="cal-d">14</div><div class="cal-d">15</div><div class="cal-d">16</div>
+        <div class="cal-d">17</div><div class="cal-d">18</div><div class="cal-d">19</div><div class="cal-d">20</div><div class="cal-d">21</div><div class="cal-d">22</div><div class="cal-d">23</div>
+        <div class="cal-d">24</div><div class="cal-d">25</div><div class="cal-d">26</div><div class="cal-d">27</div><div class="cal-d">28</div><div class="cal-d">29</div><div class="cal-d">30</div>
         <div class="cal-d">31</div>
       </div>
     </div>
@@ -632,135 +473,156 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     VENUE
-══════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════
+     7. VENUE (текст, без карты)
+════════════════════════════════════════ -->
 <section id="venue">
   <div class="wrap">
     <div class="divider fade">
-      <div class="hr"></div>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
-        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
-      </svg>
-      <div class="hr"></div>
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
     </div>
-
     <p class="section-script fade">Той өтетін жер:</p>
-    <p class="venue-name fade" style="transition-delay:.1s">Адай мейрамханасы</p>
-    <p class="venue-note fade" style="transition-delay:.15s">Мекенжай жақында белгілі болады</p>
+    <div class="venue-name fade" style="transition-delay:.1s">
+      <p>Жәнібек ауылы</p>
+      <p>Адай мейрамханасы</p>
+    </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     RSVP
-══════════════════════════════════════════ -->
-<section id="rsvp">
+<!-- ════════════════════════════════════════
+     8. АНКЕТА
+════════════════════════════════════════ -->
+<section id="anketa">
   <div class="wrap">
     <div class="divider fade">
-      <div class="hr"></div>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
-        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
-      </svg>
-      <div class="hr"></div>
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
     </div>
 
-    <p class="rsvp-title fade">
-      Тойға қатысуыңызды<br>
-      растауыңызды сұраймыз:
-    </p>
+    <p class="form-title fade">Анкета</p>
+    <p class="form-sub fade" style="transition-delay:.08s">Қатысуды растауыңызды сұраймыз</p>
 
-    <a href="#" class="rsvp-btn fade" id="rsvp-link" style="transition-delay:.1s" target="_blank">
-      Жауапты жіберу
-    </a>
-    <p class="rsvp-sub fade" style="transition-delay:.15s">Google Forms арқылы</p>
+    <form id="rsvp-form" class="fade" style="transition-delay:.15s;text-align:left" onsubmit="submitForm(event)">
+
+      <div class="field-group">
+        <label class="field-label">Аты-жөні</label>
+        <input class="field-input" type="text" id="f-name" placeholder="Сіздің атыңыз..." required>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Қатыса аласыз ба?</label>
+        <div class="attend-row">
+          <button type="button" class="attend-btn" id="btn-yes" onclick="selectAttend('yes')">Келемін</button>
+          <button type="button" class="attend-btn" id="btn-no"  onclick="selectAttend('no')">Келе алмаймын</button>
+        </div>
+        <input type="hidden" id="f-attend" value="">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Тілек</label>
+        <textarea class="field-textarea" id="f-wish" placeholder="Тілегіңізді жазыңыз..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Жіберу</button>
+    </form>
+
+    <!-- Success message -->
+    <div class="form-success" id="form-success">
+      Рахмет!<br>Жауабыңыз қабылданды 🤍
+    </div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════
-     CLOSING
-══════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════
+     9. CLOSING
+════════════════════════════════════════ -->
 <section id="closing" style="position:relative;overflow:hidden">
-
-  <svg class="side-deco" style="right:-24px;bottom:0;width:140px" viewBox="0 0 140 220" fill="none">
-    <path d="M140 220 C120 180,80 160,60 120 C40 80,60 40,40 0" stroke="#3a3530" stroke-width="1"/>
-    <path d="M110 200 C100 168,70 150,60 124" stroke="#3a3530" stroke-width=".7"/>
-    <ellipse cx="92" cy="168" rx="9" ry="14" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(20 92 168)"/>
-    <ellipse cx="72" cy="140" rx="7" ry="11" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(10 72 140)"/>
-    <circle cx="106" cy="145" r="4" fill="none" stroke="#3a3530" stroke-width=".6"/>
+  <svg class="side-deco" style="right:-20px;bottom:0;width:130px" viewBox="0 0 130 210" fill="none">
+    <path d="M130 210 C112 172,76 154,58 116 C40 78,58 40,38 0" stroke="#3a3530" stroke-width="1"/>
+    <path d="M105 192 C95 162,68 146,58 122" stroke="#3a3530" stroke-width=".7"/>
+    <ellipse cx="88" cy="162" rx="9" ry="14" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(20 88 162)"/>
+    <ellipse cx="70" cy="136" rx="7" ry="11" fill="none" stroke="#3a3530" stroke-width=".7" transform="rotate(10 70 136)"/>
   </svg>
 
-  <div class="wrap" style="padding-bottom:100px">
+  <div class="wrap" style="padding-bottom:90px">
+    <div class="divider fade">
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
+    </div>
     <p class="closing-script fade">
       Келіңіздер,<br>
       қуанышымыздың қадірлі<br>
-      қонағы болыңыздар!
+      қонағы болыңыз!
     </p>
-
-    <div class="divider fade" style="transition-delay:.1s;margin-top:44px">
-      <div class="hr"></div>
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/>
-        <line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/>
-        <line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/>
-      </svg>
-      <div class="hr"></div>
+    <div class="divider fade" style="transition-delay:.1s;margin-top:40px">
+      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
     </div>
-
-    <p class="couple-script fade" style="transition-delay:.15s;font-size:38px;margin-top:24px">Tamerlan & Alina</p>
-    <p class="label-sm fade" style="transition-delay:.2s;margin-top:10px">2 · 08 · 2026</p>
+    <p class="couple-script fade" style="transition-delay:.12s;font-size:38px;margin-top:20px">Tamerlan & Alina</p>
+    <p class="label-sm fade" style="transition-delay:.18s;margin-top:8px">2 · 08 · 2026</p>
   </div>
 </section>
 
 
 <script>
-  /* ── Countdown ── */
-  const WEDDING = new Date('2026-08-02T19:00:00');
-
-  function tick() {
-    const diff = WEDDING - Date.now();
-    if (diff <= 0) {
-      document.getElementById('countdown').innerHTML =
-        '<p style="font-size:14px;letter-spacing:3px;color:var(--accent)">ТОЙ БАСТАЛДЫ!</p>';
-      return;
-    }
-    const d = Math.floor(diff / 864e5);
-    const h = Math.floor(diff % 864e5 / 36e5);
-    const m = Math.floor(diff % 36e5 / 6e4);
-    const s = Math.floor(diff % 6e4 / 1e3);
-    document.getElementById('cd-d').textContent = d;
-    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+/* ── Countdown ── */
+const WEDDING = new Date('2026-08-02T19:00:00');
+function tick() {
+  const diff = WEDDING - Date.now();
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML =
+      '<p style="font-size:14px;letter-spacing:3px;color:var(--accent)">ТОЙ БАСТАЛДЫ!</p>';
+    return;
   }
-  tick();
-  setInterval(tick, 1000);
+  const d = Math.floor(diff / 864e5);
+  const h = Math.floor(diff % 864e5 / 36e5);
+  const m = Math.floor(diff % 36e5 / 6e4);
+  const s = Math.floor(diff % 6e4 / 1e3);
+  document.getElementById('cd-d').textContent = d;
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+tick(); setInterval(tick, 1000);
 
-  /* ── Fade-in on scroll ── */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
+/* ── Fade-in on scroll ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
 
-  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+/* ── Attendance toggle ── */
+let attendValue = '';
+function selectAttend(val) {
+  attendValue = val;
+  document.getElementById('f-attend').value = val;
+  document.getElementById('btn-yes').classList.toggle('selected', val === 'yes');
+  document.getElementById('btn-no').classList.toggle('selected',  val === 'no');
+}
 
-  /* ── Music placeholder ── */
-  function toggleMusic() {
-    alert('Музыка жақында қосылады\n\nМузыка будет добавлена позже');
-  }
+/* ── Form submit ──
+   TODO: замените ACTION_URL на ссылку Google Forms или другой сервис.
+   Пример для FormSubmit: action="https://formsubmit.co/ВАШ_EMAIL"
+*/
+function submitForm(e) {
+  e.preventDefault();
+  const name   = document.getElementById('f-name').value.trim();
+  const attend = attendValue;
+  const wish   = document.getElementById('f-wish').value.trim();
 
-  /* ── RSVP link updater (call setRsvpLink("URL") when ready) ── */
-  window.setRsvpLink = function(url) {
-    document.getElementById('rsvp-link').href = url;
-  };
+  if (!name)   { alert('Атыңызды жазыңыз'); return; }
+  if (!attend) { alert('Келе аласыз ба, соны белгілеңіз'); return; }
+
+  /* ── Временно: просто показываем сообщение ──
+     Когда будет ссылка на форму, отправьте данные fetch-ом или
+     откройте Google Form с prefilled параметрами. */
+  document.getElementById('rsvp-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
+/* ── Music ── */
+function toggleMusic() {
+  alert('Музыка жақында қосылады');
+}
 </script>
-
 </body>
 </html>
