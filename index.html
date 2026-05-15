@@ -43,12 +43,13 @@
       background-image: url('IMG_3501.jpeg');
       background-size: cover;
       background-position: center top;
-      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
     #content::before {
       content: ''; position: absolute; inset: 0;
       background: rgba(255,255,255,0.30);
       pointer-events: none;
+      z-index: 0;
     }
     #content > * { position: relative; z-index: 1; }
 
