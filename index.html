@@ -6,8 +6,15 @@
   <title>Тойға шақыру — Тамерлан & Алина</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'ChampionScript';
+      src: url('KZPFChampionScriptPro-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
@@ -17,8 +24,8 @@
       --accent:  #7a6e65;
       --line:    rgba(58,48,42,0.22);
       --serif:   'Cormorant Garamond', Georgia, serif;
-      --script:  'Great Vibes', cursive;
-      --display: 'Playfair Display', Georgia, serif;
+      --script:  'ChampionScript', cursive;
+      --display: 'Cormorant Garamond', Georgia, serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -78,6 +85,15 @@
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       position: relative; overflow: hidden;
+      background-image: url('45f92126-1eae-4581-bee0-cfebe7650a66.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(240, 236, 232, 0.72);
+      z-index: 0;
     }
     .corner-svg { position: absolute; pointer-events: none; opacity: .13; }
 
@@ -140,15 +156,15 @@
 
     /* ══════════════════════ PARENTS ══════════════════════ */
     .section-script {
-      font-family: var(--serif); font-style: italic;
+      font-family: var(--script);
       font-size: 44px; color: var(--text);
     }
     .parents-label {
-      font-family: var(--serif); font-style: italic;
+      font-family: var(--script);
       font-size: 44px; color: var(--text); margin-bottom: 12px;
     }
     .parents-names-big {
-      font-family: var(--serif); font-style: italic;
+      font-family: var(--script);
       font-size: 38px; color: var(--text); line-height: 1.5;
     }
 
@@ -215,7 +231,7 @@
     /* ══════════════════════ CALENDAR ══════════════════════ */
     .calendar { margin: 16px auto 0; max-width: 360px; }
     .cal-month {
-      font-family: var(--serif); font-style: italic;
+      font-family: var(--script);
       font-size: 38px; color: var(--text);
       margin-bottom: 20px; letter-spacing: 0;
     }
@@ -247,7 +263,7 @@
     #anketa { background: var(--bg-alt); }
 
     .form-title {
-      font-family: var(--serif); font-style: italic;
+      font-family: var(--script);
       font-size: 44px; color: var(--text); line-height: 1;
     }
     .form-sub {
