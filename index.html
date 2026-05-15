@@ -38,17 +38,10 @@
     }
 
     /* ─── Background for all non-hero sections ─── */
-    #content { position: relative; }
-    #content section { background: transparent; position: relative; overflow: hidden; }
-    #content .divider { background: transparent; position: relative; }
-
-    /* ─── Floral corner decorations ─── */
-    .floral-svg {
-      position: absolute; pointer-events: none; opacity: 0.38;
-      width: 130px;
+    #content {
+      background: url('IMG_3501.jpeg') center top / cover no-repeat;
     }
-    .floral-r { top: 0; right: 0; }
-    .floral-l { top: 0; left: 0; transform: scaleX(-1); }
+    #content section, #content .divider { background: transparent; }
 
     /* ─── Music button ─── */
     #music-btn {
@@ -457,8 +450,7 @@
      2. INVITATION TEXT
 ════════════════════════════════════════ -->
 <section id="invitation" style="position:relative;overflow:hidden">
-  <svg class="floral-svg floral-r" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap">
+    <div class="wrap">
     <p class="invite-intro fade">Құрметті қонақтар!</p>
     <p class="invite-body fade" style="transition-delay:.08s">Сіздерді</p>
     <p class="invite-names fade" style="transition-delay:.15s">Тамерлан</p>
@@ -474,8 +466,7 @@
      3. ТОЙ ИЕЛЕРІ
 ════════════════════════════════════════ -->
 <section id="parents">
-  <svg class="floral-svg floral-l" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap">
+    <div class="wrap">
     <p class="parents-label fade">Той иелері</p>
     <p class="parents-names-big fade" style="transition-delay:.1s">Жасулан · Зульфия</p>
   </div>
@@ -487,8 +478,7 @@
      4. ДАТА
 ════════════════════════════════════════ -->
 <section id="date-section">
-  <svg class="floral-svg floral-r" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap">
+    <div class="wrap">
     <div class="date-grid fade" style="transition-delay:.1s">
       <div class="date-unit">
         <span class="date-num">02</span>
@@ -517,8 +507,7 @@
      5. COUNTDOWN
 ════════════════════════════════════════ -->
 <section id="countdown-section">
-  <svg class="floral-svg floral-l" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap">
+    <div class="wrap">
     <p class="cd-frame-top fade">Тойға дейін</p>
     <div class="cd-boxes-row fade" style="transition-delay:.08s" id="countdown">
       <div class="cd-box"><span class="cd-bnum" id="cd-d">—</span><span class="cd-blbl">Күн</span></div>
@@ -539,8 +528,7 @@
 <div class="divider fade"><div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div></div>
 
 <section id="calendar-section">
-  <svg class="floral-svg floral-r" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap">
+    <div class="wrap">
     <!-- August 2026: Aug 1 = Saturday -->
     <div class="calendar fade">
       <p class="cal-month">Тамыз 2026</p>
@@ -565,8 +553,7 @@
 <div class="divider fade"><div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div></div>
 
 <section id="venue">
-  <svg class="floral-svg floral-l" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap">
+    <div class="wrap">
     <p class="venue-title fade">Жәнібек ауылы</p>
     <p class="venue-caps fade" style="transition-delay:.1s">Адай</p>
   </div>
@@ -579,8 +566,7 @@
 <div class="divider fade"><div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div></div>
 
 <section id="anketa">
-  <svg class="floral-svg floral-r" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap">
+    <div class="wrap">
     <p class="form-title fade">Анкета</p>
     <p class="form-sub fade" style="transition-delay:.08s">Қатысуды растауыңызды сұраймыз</p>
 
@@ -633,8 +619,7 @@
      9. CLOSING
 ════════════════════════════════════════ -->
 <section id="closing" style="position:relative;overflow:hidden">
-  <svg class="floral-svg floral-l" viewBox="0 0 150 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#c4b098" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M148,2 C128,28 108,55 90,82 C72,109 50,142 28,188" stroke-width="1.1"/><path d="M90,82 C78,72 62,65 46,68" stroke-width="0.85"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(0 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(72 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(144 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(216 120 38)" stroke-width="0.8"/><ellipse cx="120" cy="22" rx="6" ry="16" transform="rotate(288 120 38)" stroke-width="0.8"/><circle cx="120" cy="38" r="3" stroke-width="0.75"/><ellipse cx="96" cy="69" rx="5" ry="12" transform="rotate(-45 96 69)" stroke-width="0.8"/><ellipse cx="88" cy="82" rx="5" ry="11" transform="rotate(30 88 82)" stroke-width="0.8"/><path d="M46,68 C42,62 42,54 47,51 C52,54 51,62 46,68" stroke-width="0.8"/><path d="M46,68 C44,70 43,74 43,78" stroke-width="0.75"/><ellipse cx="62" cy="63" rx="4" ry="10" transform="rotate(-20 62 63)" stroke-width="0.8"/><circle cx="66" cy="118" r="3.5" stroke-width="0.75"/><circle cx="55" cy="126" r="2.8" stroke-width="0.75"/><circle cx="72" cy="130" r="3" stroke-width="0.75"/><path d="M66,114 C64,106 62,98 59,92" stroke-width="0.7"/><path d="M55,122 C53,114 51,106 49,100" stroke-width="0.7"/><path d="M72,126 C71,118 70,110 68,104" stroke-width="0.7"/><ellipse cx="45" cy="150" rx="6" ry="13" transform="rotate(-30 45 150)" stroke-width="0.8"/><ellipse cx="60" cy="158" rx="5" ry="11" transform="rotate(20 60 158)" stroke-width="0.8"/></g></svg>
-  <div class="wrap" style="padding-bottom:90px">
+    <div class="wrap" style="padding-bottom:90px">
     <p class="closing-script fade">
       Келіңіздер,<br>
       қуанышымыздың қадірлі<br>
