@@ -662,16 +662,31 @@ function submitForm(e) {
   if (!attend) { alert('Келе аласыз ба, соны белгілеңіз'); return; }
 
   const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSepZsk-4e_XqgTdZ7NZcz6XYhJvSpXHshw8WbIGWYeoQ-KD6g/formResponse';
-  fetch(FORM_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: new URLSearchParams({
-      'entry.1135097951': name,
-      'entry.1622606651': attend === 'yes' ? 'Келемін' : 'Келе алмаймын',
-      'entry.2010783459': attend === 'yes' ? count : '0',
-      'entry.339965633':  wish,
-    }),
-  }).catch(() => {});
+  const data = {
+    'entry.1135097951': name,
+    'entry.1622606651': attend === 'yes' ? 'Келемін' : 'Келе алмаймын',
+    'entry.2010783459': attend === 'yes' ? count : '0',
+    'entry.339965633':  wish,
+  };
+
+  /* Submit via hidden iframe — bypasses CORS */
+  const iframe = document.createElement('iframe');
+  iframe.name = '_gf_target';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = FORM_URL;
+  form.target = '_gf_target';
+  Object.entries(data).forEach(([k, v]) => {
+    const inp = document.createElement('input');
+    inp.type = 'hidden'; inp.name = k; inp.value = v;
+    form.appendChild(inp);
+  });
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(() => { form.remove(); iframe.remove(); }, 3000);
 
   document.getElementById('rsvp-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
