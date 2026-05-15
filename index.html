@@ -139,15 +139,14 @@
     }
 
     /* ══════════════════════ PARENTS ══════════════════════ */
-    .section-script { font-family: var(--script); font-size: 48px; color: var(--text); }
+    .section-script { font-family: var(--script); font-size: 44px; color: var(--text); }
     .parents-label {
-      font-size: 11px; letter-spacing: 5px;
-      color: var(--accent); text-transform: uppercase;
-      margin-bottom: 16px;
+      font-family: var(--script); font-size: 44px;
+      color: var(--text); margin-bottom: 12px;
     }
     .parents-names-big {
-      font-family: var(--script); font-size: 58px;
-      color: var(--text); line-height: 1.45;
+      font-family: var(--script); font-size: 38px;
+      color: var(--text); line-height: 1.5;
     }
 
     /* ══════════════════════ DATE ══════════════════════ */
@@ -159,23 +158,23 @@
     .date-vsep { width: 1px; height: 64px; background: var(--line); flex-shrink: 0; margin: 0 6px; }
     .date-num {
       display: block;
-      font-family: var(--display); font-size: 58px; font-weight: 400;
+      font-family: var(--display); font-size: 46px; font-weight: 400;
       line-height: 1; color: var(--text);
     }
     .date-lbl {
       display: block; margin-top: 10px;
-      font-size: 10px; letter-spacing: 4px;
+      font-size: 16px; letter-spacing: 2px;
       color: var(--accent); text-transform: uppercase;
     }
     .time-block { margin-top: 28px; }
     .time-num {
       display: block;
-      font-family: var(--display); font-size: 64px; font-weight: 400;
+      font-family: var(--display); font-size: 52px; font-weight: 400;
       line-height: 1; color: var(--text);
     }
     .time-lbl {
       display: block; margin-top: 10px;
-      font-size: 10px; letter-spacing: 4px;
+      font-size: 16px; letter-spacing: 2px;
       color: var(--accent); text-transform: uppercase;
     }
 
@@ -214,7 +213,7 @@
     .calendar { margin: 16px auto 0; max-width: 360px; }
     .cal-month {
       font-family: var(--display); font-style: italic;
-      font-size: 46px; color: var(--text);
+      font-size: 38px; color: var(--text);
       margin-bottom: 20px; letter-spacing: 0;
     }
     .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); row-gap: 2px; }
@@ -239,42 +238,42 @@
     /* ══════════════════════ FORM (Анкета) ══════════════════════ */
     #anketa { background: var(--bg-alt); }
 
-    .form-title { font-family: var(--script); font-size: 54px; color: var(--text); line-height: 1; }
+    .form-title { font-family: var(--script); font-size: 44px; color: var(--text); line-height: 1; }
     .form-sub {
       font-family: var(--serif); font-style: italic;
-      font-size: 16px; letter-spacing: 1px; color: var(--accent);
+      font-size: 20px; letter-spacing: 1px; color: var(--accent);
       margin: 8px 0 28px;
     }
 
     .field-label {
       display: block; text-align: left;
-      font-size: 10px; letter-spacing: 3px;
+      font-size: 14px; letter-spacing: 3px;
       color: var(--accent); text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .field-group { margin-bottom: 20px; }
+    .field-group { margin-bottom: 22px; }
 
     .field-input, .field-textarea {
       width: 100%; background: var(--bg);
       border: 1px solid var(--line);
-      font-family: var(--serif); font-size: 15px;
+      font-family: var(--serif); font-size: 18px;
       color: var(--text);
-      padding: 13px 16px;
+      padding: 14px 16px;
       outline: none;
       transition: border-color .2s;
       -webkit-appearance: none;
     }
     .field-input::placeholder, .field-textarea::placeholder { color: var(--accent); opacity: .7; }
     .field-input:focus, .field-textarea:focus { border-color: var(--accent); }
-    .field-textarea { resize: none; height: 90px; }
+    .field-textarea { resize: none; height: 100px; }
 
     /* Attendance toggle */
     .attend-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .attend-btn {
       background: var(--bg);
       border: 1px solid var(--line);
-      font-family: var(--serif); font-size: 15px;
-      color: var(--text); padding: 14px 8px;
+      font-family: var(--serif); font-size: 18px;
+      color: var(--text); padding: 16px 8px;
       cursor: pointer; transition: all .2s;
       -webkit-appearance: none;
     }
@@ -299,14 +298,14 @@
     }
     .count-btn:hover { background: var(--bg-alt); }
     .count-num {
-      font-family: var(--display); font-size: 28px;
-      min-width: 32px; text-align: center;
+      font-family: var(--display); font-size: 34px;
+      min-width: 40px; text-align: center;
     }
 
     .submit-btn {
       width: 100%; margin-top: 24px;
       background: #6b6058; color: var(--bg);
-      font-family: var(--serif); font-size: 13px;
+      font-family: var(--serif); font-size: 16px;
       letter-spacing: 5px; text-transform: uppercase;
       padding: 18px; border: none; cursor: pointer;
       transition: background .25s;
@@ -577,7 +576,7 @@
     <div class="divider fade">
       <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
     </div>
-    <p class="section-script fade">Той өтетін жер:</p>
+    <p class="section-script fade">Мекен-жайымыз</p>
     <div class="venue-name fade" style="transition-delay:.1s">
       <p>Жәнібек ауылы</p>
       <p>Адай мейрамханасы</p>
@@ -661,11 +660,6 @@
       қуанышымыздың қадірлі<br>
       қонағы болыңыз!
     </p>
-    <div class="divider fade" style="transition-delay:.1s;margin-top:40px">
-      <div class="hr"></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><line x1="10" y1="0" x2="10" y2="20" stroke="#3a3530" stroke-width=".8"/><line x1="0" y1="10" x2="20" y2="10" stroke="#3a3530" stroke-width=".8"/><line x1="2.9" y1="2.9" x2="17.1" y2="17.1" stroke="#3a3530" stroke-width=".5"/><line x1="2.9" y1="17.1" x2="17.1" y2="2.9" stroke="#3a3530" stroke-width=".5"/></svg><div class="hr"></div>
-    </div>
-    <p class="couple-script fade" style="transition-delay:.12s;font-size:38px;margin-top:20px">Tamerlan & Alina</p>
-    <p class="label-sm fade" style="transition-delay:.18s;margin-top:8px">2 · 08 · 2026</p>
   </div>
 </section>
 
