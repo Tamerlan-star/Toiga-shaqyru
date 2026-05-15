@@ -113,40 +113,44 @@
       font-size: 15px; letter-spacing: 5px;
       color: var(--text); text-transform: uppercase; margin-bottom: 44px;
     }
-    .scroll-hint {
-      font-size: 10px; letter-spacing: 4px;
-      color: var(--accent); text-transform: uppercase;
-      animation: breathe 2.4s infinite;
+    .scroll-arrow {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      margin-top: 4px;
+      animation: bounce-down 1.6s ease-in-out infinite;
     }
-    @keyframes breathe { 0%,100%{opacity:.45} 50%{opacity:1} }
+    .scroll-arrow svg { display: block; }
+    @keyframes bounce-down {
+      0%, 100% { transform: translateY(0); opacity: .5; }
+      50%       { transform: translateY(8px); opacity: 1; }
+    }
 
     /* ══════════════════════ INVITATION ══════════════════════ */
     .invite-intro {
-      font-family: var(--serif); font-size: 18px; letter-spacing: 1.5px;
+      font-family: var(--serif); font-size: 22px; letter-spacing: 1.5px;
       color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
     }
     .invite-names {
-      font-family: var(--script); font-size: 62px;
+      font-family: var(--script); font-size: 68px;
       color: var(--text); line-height: 1.1; margin-bottom: 20px;
     }
     .invite-body {
-      font-size: 15px; letter-spacing: 1.5px; line-height: 1.95;
+      font-size: 19px; letter-spacing: 1px; line-height: 2;
       color: var(--text);
     }
 
     /* ══════════════════════ PARENTS ══════════════════════ */
-    .section-script { font-family: var(--script); font-size: 44px; color: var(--text); }
-    .parents-script { font-family: var(--script); font-size: 40px; color: var(--text); margin-top: 4px; }
+    .section-script { font-family: var(--script); font-size: 48px; color: var(--text); }
+    .parents-script { font-family: var(--script); font-size: 46px; color: var(--text); margin-top: 4px; }
 
     /* ══════════════════════ DATE ══════════════════════ */
     .date-big {
-      font-size: 17px; letter-spacing: 4px;
-      text-transform: uppercase; line-height: 2; color: var(--text);
+      font-size: 21px; letter-spacing: 4px;
+      text-transform: uppercase; line-height: 2.1; color: var(--text);
     }
 
     /* ══════════════════════ COUNTDOWN ══════════════════════ */
     .cd-frame {
-      font-size: 12px; letter-spacing: 3px;
+      font-size: 15px; letter-spacing: 3px;
       color: var(--accent); text-transform: uppercase;
       margin-bottom: 16px;
     }
@@ -159,9 +163,9 @@
       display: block; font-size: 40px; font-weight: 300;
       line-height: 1; margin-bottom: 5px; min-width: 52px;
     }
-    .cd-lbl { font-size: 9px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; }
+    .cd-lbl { font-size: 11px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; }
     .cd-after {
-      font-size: 12px; letter-spacing: 3px;
+      font-size: 15px; letter-spacing: 3px;
       color: var(--accent); text-transform: uppercase;
       margin-top: 14px;
     }
@@ -171,26 +175,19 @@
     .cal-month { font-size: 11px; letter-spacing: 5px; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
     .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); row-gap: 2px; }
     .cal-hd { font-size: 10px; letter-spacing: 1.5px; color: var(--accent); text-align: center; padding: 4px 0; }
-    .cal-d { font-size: 14px; text-align: center; padding: 7px 2px; color: var(--text); position: relative; }
-    .cal-d.wedding { font-weight: 700; }
-    .cal-d.wedding::before {
-      content: '';
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      width: 30px; height: 30px;
-      border-radius: 50%; border: 1.2px solid var(--text);
-    }
+    .cal-d { font-size: 16px; text-align: center; padding: 9px 2px; color: var(--text); position: relative; }
+    .cal-d.wedding { font-weight: 700; padding-top: 22px; }
     .cal-d.wedding::after {
-      content: '♡';
-      position: absolute; top: -13px; left: 50%;
+      content: '♥';
+      position: absolute; top: 3px; left: 50%;
       transform: translateX(-50%);
-      font-size: 17px; color: var(--text); opacity: .45;
+      font-size: 15px; color: var(--text); opacity: .55;
     }
     .cal-empty { padding: 7px 2px; }
 
     /* ══════════════════════ VENUE ══════════════════════ */
     .venue-name {
-      font-size: 16px; letter-spacing: 3px;
+      font-size: 20px; letter-spacing: 3px;
       text-transform: uppercase; color: var(--text);
       line-height: 1.9; margin-top: 10px;
     }
@@ -243,10 +240,29 @@
       border-color: #6b6058;
     }
 
+    /* Guest counter */
+    .counter-row {
+      display: flex; align-items: center; gap: 20px;
+    }
+    .count-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--bg); color: var(--text);
+      font-size: 22px; font-family: var(--serif);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+      -webkit-appearance: none;
+    }
+    .count-btn:hover { background: var(--bg-alt); }
+    .count-num {
+      font-family: var(--display); font-size: 28px;
+      min-width: 32px; text-align: center;
+    }
+
     .submit-btn {
       width: 100%; margin-top: 24px;
       background: #6b6058; color: var(--bg);
-      font-family: var(--serif); font-size: 12px;
+      font-family: var(--serif); font-size: 13px;
       letter-spacing: 5px; text-transform: uppercase;
       padding: 18px; border: none; cursor: pointer;
       transition: background .25s;
@@ -254,9 +270,16 @@
     .submit-btn:hover { background: #4e4540; }
 
     .form-success {
-      display: none;
-      font-family: var(--script); font-size: 42px;
-      color: var(--text); padding: 40px 0;
+      display: none; text-align: center; padding: 48px 0 20px;
+    }
+    .form-success-title {
+      font-family: var(--script); font-size: 72px;
+      color: var(--text); line-height: 1;
+    }
+    .form-success-sub {
+      font-size: 14px; letter-spacing: 3px;
+      color: var(--accent); text-transform: uppercase;
+      margin-top: 16px;
     }
 
     /* ══════════════════════ CLOSING ══════════════════════ */
@@ -366,7 +389,14 @@
 
     <p class="couple-script fade" style="transition-delay:.2s">Tamerlan & Alina</p>
     <p class="hero-date fade" style="transition-delay:.3s">2 · Тамыз · 2026</p>
-    <p class="scroll-hint fade" style="transition-delay:.4s">↓ &ensp; Жоғары Көтеріңіз &ensp; ↓</p>
+    <div class="scroll-arrow fade" style="transition-delay:.4s">
+      <svg width="36" height="22" viewBox="0 0 36 22" fill="none">
+        <path d="M2 2 L18 18 L34 2" stroke="#7a6e65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg width="36" height="22" viewBox="0 0 36 22" fill="none" style="margin-top:-8px;opacity:.45">
+        <path d="M2 2 L18 18 L34 2" stroke="#7a6e65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
   </div>
 </section>
 
@@ -518,6 +548,17 @@
         <input type="hidden" id="f-attend" value="">
       </div>
 
+      <!-- Guest count — visible only when "Келемін" selected -->
+      <div class="field-group" id="count-field" style="display:none">
+        <label class="field-label">Қанша адам?</label>
+        <div class="counter-row">
+          <button type="button" class="count-btn" onclick="changeCount(-1)">−</button>
+          <span class="count-num" id="guest-count-display">1</span>
+          <button type="button" class="count-btn" onclick="changeCount(1)">+</button>
+        </div>
+        <input type="hidden" id="f-count" value="1">
+      </div>
+
       <div class="field-group">
         <label class="field-label">Тілек</label>
         <textarea class="field-textarea" id="f-wish" placeholder="Тілегіңізді жазыңыз..."></textarea>
@@ -528,7 +569,8 @@
 
     <!-- Success message -->
     <div class="form-success" id="form-success">
-      Рахмет!<br>Жауабыңыз қабылданды 🤍
+      <p class="form-success-title">Рахмет!</p>
+      <p class="form-success-sub">Жауабыңыз қабылданды</p>
     </div>
   </div>
 </section>
@@ -592,29 +634,34 @@ document.querySelectorAll('.fade').forEach(el => io.observe(el));
 
 /* ── Attendance toggle ── */
 let attendValue = '';
+let guestCount = 1;
+
 function selectAttend(val) {
   attendValue = val;
   document.getElementById('f-attend').value = val;
   document.getElementById('btn-yes').classList.toggle('selected', val === 'yes');
   document.getElementById('btn-no').classList.toggle('selected',  val === 'no');
+  document.getElementById('count-field').style.display = val === 'yes' ? 'block' : 'none';
+}
+
+function changeCount(delta) {
+  guestCount = Math.max(1, Math.min(20, guestCount + delta));
+  document.getElementById('guest-count-display').textContent = guestCount;
+  document.getElementById('f-count').value = guestCount;
 }
 
 /* ── Form submit ──
-   TODO: замените ACTION_URL на ссылку Google Forms или другой сервис.
-   Пример для FormSubmit: action="https://formsubmit.co/ВАШ_EMAIL"
+   TODO: когда будет ссылка на форму — добавьте отправку через fetch или
+   откройте Google Form с prefilled параметрами.
 */
 function submitForm(e) {
   e.preventDefault();
   const name   = document.getElementById('f-name').value.trim();
   const attend = attendValue;
-  const wish   = document.getElementById('f-wish').value.trim();
 
   if (!name)   { alert('Атыңызды жазыңыз'); return; }
   if (!attend) { alert('Келе аласыз ба, соны белгілеңіз'); return; }
 
-  /* ── Временно: просто показываем сообщение ──
-     Когда будет ссылка на форму, отправьте данные fetch-ом или
-     откройте Google Form с prefilled параметрами. */
   document.getElementById('rsvp-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
 }
