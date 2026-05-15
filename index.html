@@ -37,6 +37,21 @@
       overflow-x: hidden;
     }
 
+    /* ─── Background for all non-hero sections ─── */
+    #content {
+      position: relative;
+      background-image: url('IMG_3501.jpeg');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+    }
+    #content::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(255,255,255,0.62);
+      pointer-events: none;
+    }
+    #content > * { position: relative; z-index: 1; }
+
     /* ─── Music button ─── */
     #music-btn {
       position: fixed;
@@ -428,6 +443,7 @@
   </div>
 </section>
 
+<main id="content">
 
 <!-- ════════════════════════════════════════
      2. INVITATION TEXT
@@ -625,6 +641,7 @@
   </div>
 </section>
 
+</main>
 
 <script>
 /* ── Countdown ── */
