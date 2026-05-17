@@ -48,21 +48,6 @@
       background: url('IMG_3519.jpeg') center top / cover no-repeat;
     }
 
-    /* ─── Music button ─── */
-    #music-btn {
-      position: fixed;
-      top: 14px; right: 14px;
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: rgba(240, 236, 232, 0.92);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 200;
-      padding: 0;
-      transition: background .25s;
-    }
-    #music-btn:hover { background: var(--bg-alt); }
 
     /* ─── Layout ─── */
     .wrap {
@@ -413,18 +398,6 @@
 </head>
 <body>
 
-<!-- Music button -->
-<button id="music-btn" onclick="toggleMusic()" title="Музыка">
-  <svg width="72" height="72" viewBox="0 0 72 72">
-    <defs>
-      <path id="mcp" d="M4,36 A32,32 0 0,1 36,4 A32,32 0 0,1 68,36 A32,32 0 0,1 36,68 A32,32 0 0,1 4,36"/>
-    </defs>
-    <text font-size="7" fill="#7a6e65" font-family="Cormorant Garamond,serif" letter-spacing="1.4">
-      <textPath href="#mcp">· әуен қосу · әуен қосу </textPath>
-    </text>
-    <text x="36" y="36" text-anchor="middle" dominant-baseline="central" font-size="19" fill="#7a6e65" font-style="italic" font-family="Georgia,serif">♫</text>
-  </svg>
-</button>
 
 
 <!-- ════════════════════════════════════════
@@ -463,12 +436,12 @@
     <p class="invite-names fade" style="transition-delay:.15s">Тамерлан</p>
     <p class="invite-dan fade" style="transition-delay:.18s">және</p>
     <p class="invite-names fade" style="transition-delay:.2s">Алина</p>
-    <p class="invite-body fade" style="transition-delay:.22s;margin-top:4px">балаларымыздың үйлену тойына арналған салтанатты ақ дастарқанға қадірлі қонағы болуға шақырамыз!</p>
+    <p class="invite-body fade" style="transition-delay:.22s;margin-top:4px">балаларымыздың үйлену тойына арналған салтанатты ақ дастарқанның қадірлі қонағы болуға шақырамыз!</p>
   </div>
   <div class="divider fade" style="padding: 20px 28px;"><div class="hr"></div><svg width="18" height="18" viewBox="0 0 18 18"><ellipse cx="9" cy="5.5" rx="2" ry="3.2" fill="#3a3530" opacity="0.7" transform="rotate(0 9 9)"/><ellipse cx="9" cy="5.5" rx="2" ry="3.2" fill="#3a3530" opacity="0.7" transform="rotate(72 9 9)"/><ellipse cx="9" cy="5.5" rx="2" ry="3.2" fill="#3a3530" opacity="0.7" transform="rotate(144 9 9)"/><ellipse cx="9" cy="5.5" rx="2" ry="3.2" fill="#3a3530" opacity="0.7" transform="rotate(216 9 9)"/><ellipse cx="9" cy="5.5" rx="2" ry="3.2" fill="#3a3530" opacity="0.7" transform="rotate(288 9 9)"/><circle cx="9" cy="9" r="2" fill="#3a3530"/></svg><div class="hr"></div></div>
   <div class="wrap">
     <p class="parents-label fade">Той иелері</p>
-    <p class="parents-names-big fade" style="transition-delay:.1s">Жасулан · Зульфия</p>
+    <p class="parents-names-big fade" style="transition-delay:.1s">Жасулан · Зульфия <span style="font-family:serif;font-size:0.55em;opacity:0.7;vertical-align:middle">🕊</span></p>
   </div>
 </section>
 
@@ -542,6 +515,7 @@
   <div class="wrap">
     <p class="venue-title fade">Жәнібек ауылы</p>
     <p class="venue-caps fade" style="transition-delay:.1s">Адай</p>
+    <p class="venue-name fade" style="transition-delay:.15s">мейрамханасы</p>
   </div>
 </section>
 
@@ -695,10 +669,6 @@ function submitForm(e) {
   document.getElementById('form-success').style.display = 'block';
 }
 
-/* ── Music ── */
-function toggleMusic() {
-  alert('Музыка жақында қосылады');
-}
 </script>
 </body>
 </html>
